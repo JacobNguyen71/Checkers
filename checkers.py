@@ -5,8 +5,8 @@ import itertools
 
 pygame.init()
 
-WIDTH = 1000
-HEIGHT = 1000
+WIDTH = 800
+HEIGHT = 800
 BOARD_ROWS = 8
 BOARD_COLS = 8
 SQUARE_SIZE = WIDTH//BOARD_ROWS
@@ -25,18 +25,9 @@ pygame.display.set_caption("Checkers")
 
 gameOver = False
 player = 1
-def draw_board():
-
-    for x in range(0, WIDTH, SQUARE_SIZE):
-        for y in range(0, HEIGHT, SQUARE_SIZE):
-            rect = (x, y, SQUARE_SIZE, SQUARE_SIZE)
-            pygame.draw.rect(background, next(BOARD_COLORS), rect)
-        next(BOARD_COLORS)
 
 while True:
-    draw_board()
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
     pygame.display.update()
-    pygame.display.flip()
